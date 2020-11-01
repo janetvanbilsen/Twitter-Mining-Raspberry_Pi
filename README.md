@@ -7,7 +7,7 @@ Rather than running one Tweepy session a day, which results in tweets that are o
    * [Introduction](#introduction)
    * [Installation](#installation)
    * [Instructions](#instructions)
-      * [Location Datasets](#location datasets)
+      * [Location Datasets](#location-datasets)
       * [Crontab](#crontab)
 <!--te-->
 
