@@ -21,6 +21,18 @@ To install this project, either:
 
 ## Instructions ##
 
+## Python File ##
+Ensure that you replace the Twitter API key placeholders with your own valid keys
+* consumer_key
+* consumer_secret
+* access_token
+* secret_token_secret
+
+## Location Datasets ##
+Included are two location datasets: 
+* Places_UK.xlsx: includes a column with the locations that you want to collect tweets from _(names are not case sensitive)_
+* Location_exceptions.xlsx: includes a column of location names that you _do not_ want to be included in the user's location string (e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham)
+
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.  
 
