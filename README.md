@@ -57,7 +57,7 @@ Enter into the cron editor by entering the following BASH command:<br />
 Format the cron job with the following cron expression:<br />
 `*/10 07-23 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 collect_tweets_master.py`  
 
-* `*/10 07-23 * * *`: executing every 10 mins from 7 am to midnight _[minute hour day(month) month day(week)]_
+* `*/10 07-23 * * *`: executing every 10 mins from 7 am to midnight
 * `cd /home/pi/Sync/twitter`: changing directory to the folder that contains the python file
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
 * `collect_tweets_master.py`: Python file that is to be run
