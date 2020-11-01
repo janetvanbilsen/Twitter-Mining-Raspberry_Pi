@@ -29,9 +29,10 @@ Ensure that you replace the Twitter API key placeholders with your own valid key
 * secret_token_secret
 
 ## Location Datasets ##
-Included are two location datasets: 
+Included are two location datasets:<br />
 `Places_UK.xlsx`<br />
 Includes a column with the locations that you want to collect tweets from _(names are not case sensitive)_
+<br />
 <br />
 `Location_exceptions.xlsx`<br /> 
 Includes a column of location names that you _do not_ want to be included in the user's location string<br />
