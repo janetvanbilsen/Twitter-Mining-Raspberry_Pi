@@ -39,7 +39,7 @@ Make sure that you replace the Twitter API key placeholders with your own valid 
 * access_token
 * secret_token_secret<br />
 
-The current setup has the script run for a maximum of 600 seconds (10 mins). This was done for stability reasons. Rather than have the script run for 17 consecutive hours, it was run for 10 mins every 10 mins for 17 hours. Doing so ensured that if there were any errors that caused the script to exit, it would be run again in less than 10 minutes again. Data loss is also therefore minimal. 
+The current setup has the script run for a maximum of 600 seconds (10 mins). This was done for stability reasons. Rather than have the script run for 17 consecutive hours, it was run for 10 mins every 10 mins for 17 hours. Doing so ensured that if there were any errors that caused the script to exit, it would be run again in less than 10 minutes again. Data loss is also therefore minimal. _See the (#crontab) section for more details on how to automate the script_.
 
 
 ### Location Datasets ###
