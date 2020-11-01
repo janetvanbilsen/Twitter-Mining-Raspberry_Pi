@@ -13,7 +13,7 @@ Rather than running one Tweepy session a day, which results in tweets that are o
 This README file describes the dataset of the final year project by Janet van Bilsen.  
 
 ## Installation ##
-To install the project, either:
+To install this project, either:
 * Clone this Github repository 
 * Download the master branch zip file.
 
