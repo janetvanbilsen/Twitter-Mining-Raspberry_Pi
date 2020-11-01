@@ -1,5 +1,5 @@
-# Twitter Mining Using Raspberry Pi 4
-Rather than running one Tweepy session a day, which results in tweets that are ony from one time period of the day, this project works with Raspberry Pi to _collect tweets continuously throughout the day_ (within the Twitter API rate-limit). 
+# Twitter Mining Using Raspberry Pi
+Rather than running one Tweepy session a day, which results in tweets that are ony from one time period of the day, this project works with Raspberry Pi to _collect tweets continuously throughout the day_ (within the Twitter API rate-limit). This project is fully open-source under the MIT License.
 
 ## Twitter Mining Python File
 
