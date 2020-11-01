@@ -30,8 +30,12 @@ Ensure that you replace the Twitter API key placeholders with your own valid key
 
 ## Location Datasets ##
 Included are two location datasets: 
-* Places_UK.xlsx: includes a column with the locations that you want to collect tweets from _(names are not case sensitive)_
-* Location_exceptions.xlsx: includes a column of location names that you _do not_ want to be included in the user's location string (e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham)
+`Places_UK.xlsx`<br />
+Includes a column with the locations that you want to collect tweets from _(names are not case sensitive)_
+<br />
+`Location_exceptions.xlsx`<br /> 
+Includes a column of location names that you _do not_ want to be included in the user's location string<br />
+(e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham)
 
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.  
