@@ -29,9 +29,9 @@ Ensure that you replace the Twitter API key placeholders with your own valid key
 * secret_token_secret
 
 ## Location Datasets ##
-Included are two location datasets:<br /><br />
+Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. <br /><br />
 `Places_UK.xlsx`<br />
-Includes a column with the locations that you want to collect tweets from _(names are not case sensitive)_
+Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.
 <br />
 <br />
 `Location_exceptions.xlsx`<br /> 
