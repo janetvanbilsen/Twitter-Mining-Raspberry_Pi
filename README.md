@@ -1,7 +1,8 @@
 # Twitter Mining Using Raspberry Pi
 Rather than running one Tweepy session a day, which results in tweets that are ony from one time period of the day, this project works with Raspberry Pi to _collect tweets continuously throughout the day_ (within the Twitter API rate-limit). This project is fully open-source under the MIT License.
 
-## Twitter Mining Python File
+## Introduction ##
+This README file describes the dataset of the final year project by Janet van Bilsen.  
 
 ## Create a cron job to automate the running of the .py file ##
 Automate the running of the Twitter mining Python script by creating a cronjob in the Raspberry Pi terminal.  
