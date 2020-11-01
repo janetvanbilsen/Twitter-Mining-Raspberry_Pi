@@ -5,6 +5,7 @@ Rather than running one Tweepy session a day, which results in tweets that are o
 <!--ts-->
    * [Table of contents](#table-of-contents)
    * [Introduction](#introduction)
+   * [Installation](#installation)
    * [Usage](#usage)
       * [Crontab](#crontab)
 <!--te-->
