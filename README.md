@@ -22,7 +22,7 @@ To install this project, either:
 
 ## Instructions ##
 
-## Python File ##
+### Python File ###
 Ensure that you replace the Twitter API key placeholders with your own valid keys
 * consumer_key
 * consumer_secret
