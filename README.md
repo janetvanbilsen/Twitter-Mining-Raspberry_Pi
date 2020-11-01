@@ -24,9 +24,11 @@ To install this project, either:
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.  
 
+
 Enter into the cron editor by entering the following BASH command:
 
 `pi@raspberrypi:~ $ crontab -e`
+ 
  
 Format the cron job with the following cron expression:
 
