@@ -22,8 +22,11 @@ To install this project, either:
 
 ## Instructions ##
 
+### Raspberry Pi Setup ###
+Ensure that Python (> 3.7) is installed. 
+
 ### Python File ###
-Ensure that you replace the Twitter API key placeholders with your own valid keys
+Make sure that you replace the Twitter API key placeholders with your own valid keys
 * consumer_key
 * consumer_secret
 * access_token
