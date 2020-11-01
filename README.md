@@ -27,6 +27,7 @@ To install this project, either:
 The Raspberry Pi 4 Model B (4GB RAM) was used for this project, alongside a case that includes a cooling fan and heatsinks for the board. While _quiet mode_ was used for the cooling fan, the only program that was running was this project. Therefore, if you plan to use the Pi for other processes, it is advised to use the cooling fan in a higher setting.<br />
 
 A monitor was used to initially setup the project. The Pi was subsequently used in headless mode for the rest of the data mining process. To keep track of the mining progress, it is advisable to keep a running log in the terminal window. This can be done by printing out changes to the dataset file. Using the below code, the terminal window will print the tweet data to the terminal once it has been mined. This includes a tweet timestamp that can be used to track whether the project is still running.<br /><br />
+
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Dataset.csv`
 * tail prints out any changes that occur to the file to the terminal 
 * -F tracks the file even when the file does not exist yet, which is useful is the script is not running yet and you want to keep track when it starts 
@@ -36,7 +37,10 @@ Make sure that you replace the Twitter API key placeholders with your own valid 
 * consumer_key
 * consumer_secret
 * access_token
-* secret_token_secret
+* secret_token_secret<br />
+
+The current setup has the script run for a maximum of 600 seconds (10 mins). This was done for stability reasons. Rather than have the script run for 17 consecutive hours, it was run for 10 mins every 10 mins for 17 hours. Doing so ensured that if there were any errors that caused the script to exit, it would be run again in less than 10 minutes again. Data loss is also therefore minimal. 
+
 
 ### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. <br /><br />
