@@ -1,5 +1,7 @@
 # Twitter Mining Using Raspberry Pi 4
-Using Raspberry Pi to mine Tweets by automating the running of Tweepy API
+Rather than running one Tweepy session a day, which results in tweets that are ony from one time period of the day, this project works with Raspberry Pi to _collect tweets continuously throughout the day_ (within the Twitter API rate-limit). 
+
+## Twitter Mining Python File
 
 ## Create a cron job to automate the running of the .py file ##
 Automate the running of the Twitter mining Python script by creating a cronjob in the Raspberry Pi terminal.  
