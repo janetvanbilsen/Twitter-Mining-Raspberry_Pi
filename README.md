@@ -7,6 +7,7 @@ Rather than running one Tweepy session a day, which results in tweets that are o
    * [Introduction](#introduction)
    * [Installation](#installation)
    * [Instructions](#instructions)
+      * [Location Datasets](#location datasets)
       * [Crontab](#crontab)
 <!--te-->
 
@@ -28,7 +29,7 @@ Ensure that you replace the Twitter API key placeholders with your own valid key
 * access_token
 * secret_token_secret
 
-## Location Datasets ##
+### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. <br /><br />
 `Places_UK.xlsx`<br />
 Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.
