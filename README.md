@@ -6,7 +6,7 @@ Rather than running one Tweepy session a day, which results in tweets that are o
    * [Table of contents](#table-of-contents)
    * [Introduction](#introduction)
    * [Installation](#installation)
-   * [Usage](#usage)
+   * [Instructions](#instructions)
       * [Crontab](#crontab)
 <!--te-->
 
@@ -19,7 +19,7 @@ To install this project, either:
 * Download the master branch zip file.
 
 
-## Usage ##
+## Instructions ##
 
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.  
