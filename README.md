@@ -30,6 +30,7 @@ A monitor was used to initially setup the project. The Pi was subsequently used 
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Dataset.csv`
 * _tail_ prints out any changes that occur to the file to the terminal 
+* _-n1_ only prints the last row
 * _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
 
 ### Python File ###
