@@ -26,9 +26,9 @@ To install this project, either:
 ### Raspberry Pi Setup ###
 The Raspberry Pi 4 Model B (4GB RAM) was used for this project, alongside a case that includes a cooling fan and heatsinks for the board. While _quiet mode_ was used for the cooling fan, the only program that was running was this project. Therefore, if you plan to use the Pi for other processes, it is advised to use the cooling fan in a higher setting.<br />
 
-A monitor was used to initially setup the project. The Pi was subsequently used in headless mode for the rest of the data mining process. To keep track of the mining progress, it is advisable to keep a running log in the terminal window. This can be done by printing out changes to the dataset file. Using the below code, the terminal window will print the tweet data to the terminal once it has been mined. This includes a tweet timestamp that can be used to track whether the project is still running.<br />
+A monitor was used to initially setup the project. The Pi was subsequently used in headless mode for the rest of the data mining process. To keep track of the mining progress, it is advisable to keep a running log in the terminal window. This can be done by printing out changes to the mining_log file. Using the below code, the terminal window will print the tweet data to the terminal once it has been mined. This includes a tweet timestamp that can be used to track whether the project is still running.<br />
 
-`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Dataset.csv`
+`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
 * _-n1_ only prints the last row
 * _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
