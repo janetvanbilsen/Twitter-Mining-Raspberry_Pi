@@ -1,4 +1,4 @@
-# CATS: Raspbery Pi Twitter Mining Server
+# CATS - Raspbery Pi Twitter Mining Server
 CATS (Continuous rAspberry pi Tweets collection Server) can be used to turn a Raspberry Pi into a Twitter mining server. Using a server allows for tweets to be continuously collected throughout the day, rather than at one specific time period. CATS is therefore ideal for any project looking to observe patterns on Twitter throughout a range of time. This project is fully open-source under the MIT License.
 
 ## Table of Contents ##
