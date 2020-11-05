@@ -58,7 +58,7 @@ Included are two location datasets. These are Excel files that contain one colum
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.<br />
 
-Enter into the cron editor by entering the following BASH command:<br />
+Enter into the cron editor with the following BASH command:<br />
 `pi@raspberrypi:~ $ crontab -e`<br />
   
 Format the cron job with the following cron expression:<br />
