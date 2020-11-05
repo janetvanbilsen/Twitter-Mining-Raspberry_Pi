@@ -31,17 +31,21 @@ Make sure that you replace the Twitter API key placeholders in `collect_tweets_m
 * access_token
 * secret_token_secret<br />
 
+#### Twitter Search ####
+CATS was developed to study depression on Twitter. Hence, the default keywords. To change the terms used to search Twitter, edit the following code in `collect_tweets_master.py`:<br />
+
+`keywords = ['depression', 'depressed', 'depressive', 'depressing']`<br />
+
+The tweet language is set to English. This can be changed by editing the following code:<br />
+
+`myStream.filter(track=keywords, languages=["en"])`<br />
+
 #### Script Running Time ####
 The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight, instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
 
 To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
 `class MyStreamListener(StreamListener):`<br />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
-
-#### Twitter Keyword Search ####
-CATS was developed to study depression on Twitter. Hence, the default keywords. To change the terms used to search Twitter, edit the following code in `collect_tweets_master.py`:<br />
-
-`keywords = ['depression', 'depressed', 'depressive', 'depressing']`
 
 ### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
