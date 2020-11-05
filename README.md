@@ -35,12 +35,11 @@ Make sure that you replace the Twitter API key placeholders in _collect_tweets_m
 The current setup has the script run for 600 seconds (10 mins). This is because the server was developed to run from 7am to midnight and instead of running the script for 17 hours straight, for stability reasons it would be better to run it every 10mins for 17 hours. Therefore, if there is any issues with timeout, the script will run again in less than 10 mins and reduce the amount of data lost. _See the [Crontab section](#crontab) for more details on how to automate the script_.
 
 ### Location Datasets ###
-Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br /><br />
+Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
 
 `Places_UK.xlsx`<br />
 
-Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br /><br />
-
+Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
 
 `Location_exceptions.xlsx`<br /> 
 
