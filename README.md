@@ -25,7 +25,7 @@ To install this project, either:
 
 ### Tweepy Setup ###
 #### Twitter API Keys ####
-Make sure that you replace the Twitter API key placeholders in _collect_tweets_master_ with your own valid Twitter developor keys
+Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developor keys
 * consumer_key
 * consumer_secret
 * access_token
