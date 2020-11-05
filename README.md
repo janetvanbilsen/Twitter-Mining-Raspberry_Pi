@@ -1,5 +1,5 @@
-# Twitter Mining Using Raspberry Pi
-Rather than running one Tweepy session a day, which results in tweets that are ony from one time period of the day, this project works with Raspberry Pi to _collect tweets continuously throughout the day_ (within the Twitter API rate-limit). This project is fully open-source under the MIT License.
+# CATS - Raspbery Pi Twitter Mining Server
+CATS (Continuous rAspberry pi Tweets collection Server) can be used to turn a Raspberry Pi into a Twitter mining server. Using a server allows for tweets to be continuously collected throughout the day, rather than at one specific time period. CATS is therefore ideal for any project looking to observe patterns on Twitter for a span of time. This project is fully open-source under the MIT License.
 
 ## Table of Contents ##
 <!--ts-->
@@ -7,13 +7,13 @@ Rather than running one Tweepy session a day, which results in tweets that are o
    * [Introduction](#introduction)
    * [Installation](#installation)
    * [Instructions](#instructions)
-      * [Raspberry Pi Setup](#raspberry-pi-setup)
+      * [Twitter Script Setup](#twitter-script-setup)
       * [Location Datasets](#location-datasets)
       * [Crontab](#crontab)
+      * [Raspberry Pi Setup](#raspberry-pi-setup)
 <!--te-->
 
 ## Introduction ##
-This README file describes the dataset of the final year project by Janet van Bilsen.  
 
 ## Installation ##
 To install this project, either:
@@ -23,35 +23,29 @@ To install this project, either:
 
 ## Instructions ##
 
-### Raspberry Pi Setup ###
-The Raspberry Pi 4 Model B (4GB RAM) was used for this project, alongside a case that includes a cooling fan and heatsinks for the board. While _quiet mode_ was used for the cooling fan, the only program that was running was this project. Therefore, if you plan to use the Pi for other processes, it is advised to use the cooling fan in a higher setting.<br />
-
-A monitor was used to initially setup the project. The Pi was subsequently used in headless mode for the rest of the data mining process. To keep track of the mining progress, it is advisable to keep a running log in the terminal window. This can be done by printing out changes to the mining_log file. Using the below code, the terminal window will print the tweet data to the terminal once it has been mined. This includes a tweet timestamp that can be used to track whether the project is still running.<br />
-
-`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
-* _tail_ prints out any changes that occur to the file to the terminal 
-* _-n1_ only prints the last row
-* _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
-
-### Python File ###
-Make sure that you replace the Twitter API key placeholders with your own valid keys
+### Twitter Scirpt Setup ###
+#### Developer API Keys ####
+Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developer keys
 * consumer_key
 * consumer_secret
 * access_token
 * secret_token_secret<br />
 
-The current setup has the script run for a maximum of 600 seconds (10 mins). This was done for stability reasons. Rather than have the script run for 17 consecutive hours, it was run for 10 mins every 10 mins for 17 hours. Doing so ensured that if there were any errors that caused the script to exit, it would be run again in less than 10 minutes again. Data loss is also therefore minimal. _See the [Crontab section](#crontab) for more details on how to automate the script_.
+#### Script Running Time ####
+The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight, instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
+
+To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
+`class MyStreamListener(StreamListener):`<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
 
 
 ### Location Datasets ###
-Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. <br /><br />
-`Places_UK.xlsx`<br />
-Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.
-<br />
-<br />
-`Location_exceptions.xlsx`<br /> 
-Includes a column of location names that you _do not_ want to be included in the user's location string<br />
-(e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham)
+Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
+
+`Places_UK.xlsx`: includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
+
+`Location_exceptions.xlsx`: includes a column of location names that you _do not_ want to be included in the user's location string
+(e.g., USA is included to prevent American cities that are also UK cities). _Names are case sensitive_.
 
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.<br />
@@ -66,3 +60,13 @@ Format the cron job with the following cron expression:<br />
 * `cd /home/pi/Sync/twitter`: changing directory to the folder that contains the python file
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
 * `collect_tweets_master.py`: Python file that is to be run
+
+### Raspberry Pi Setup ###
+CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
+
+While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `Mining_Log.txt`. This log includes tweet creation date&time, username of the tweeter, and date&time that the tweet was collected. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
+
+`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
+* _tail_ prints out any changes that occur to the file to the terminal 
+* _-n1_ only prints the last row
+* _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
