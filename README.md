@@ -24,9 +24,9 @@ To install this project, either:
 ## Instructions ##
 
 ### Raspberry Pi Setup ###
-The Raspberry Pi 4 Model B (4GB RAM) was used for this project, alongside a case that includes a cooling fan and heatsinks for the board. While _quiet mode_ was used for the cooling fan, the only program that was running was this project. Therefore, if you plan to use the Pi for other processes, it is advised to use the cooling fan in a higher setting.<br />
+CATS was developed using the Raspberry Pi 4 Model B (4GB RAM) in a case that included a cooling fan and heatsinks for the board. Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
 
-A monitor was used to initially setup the project. The Pi was subsequently used in headless mode for the rest of the data mining process. To keep track of the mining progress, it is advisable to keep a running log in the terminal window. This can be done by printing out changes to the mining_log file. Using the below code, the terminal window will print the tweet data to the terminal once it has been mined. This includes a tweet timestamp that can be used to track whether the project is still running.<br />
+While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the tweets mining will be produced by CATS and saved as 'mining_log.txt.' This log includes tweet creation date&time, username of the tweeter, and date&time that this tweet was collected. Using the below code, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress via a virtual monitor on smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
