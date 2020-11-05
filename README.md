@@ -1,5 +1,5 @@
-# Continuous rAspberry pi Tweets collection Server (CATS)
-PROJECT consists of a Python script that works w
+# CATS: Raspbery Pi Twitter Mining Server
+CATS (Continuous rAspberry pi Tweets collection Server) consists of a Python script that works w
 
 Rather than running one Tweepy session a day, which results in tweets that are only from one period of time in the day, this project works with Raspberry Pi to _collect tweets continuously throughout_ (within the Twitter API rate-limit). This project is fully open-source under the MIT License.
 
