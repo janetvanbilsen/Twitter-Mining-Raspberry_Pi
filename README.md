@@ -36,7 +36,7 @@ The current setup has the script run for 600 seconds (10 mins). This is because 
 
 To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
 `class MyStreamListener(StreamListener):`<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
 
 
 ### Location Datasets ###
