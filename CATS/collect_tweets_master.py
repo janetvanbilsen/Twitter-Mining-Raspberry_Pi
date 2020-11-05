@@ -19,25 +19,20 @@ auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
 auth.set_access_token(access_token, secret_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
-# https://www.thegeographist.com/uk-cities-population-1000/
+# Places that should be included in geographical location
 uk_places = pd.read_excel('/home/pi/Sync/twitter/Places_UK.xlsx')
-
 uk_places = list(uk_places.Place)
-
-uk_places.extend(['UK', 'United Kingdom', 'England', 'Scotland',
-                  'Wales', 'Great Britain'])
-
 uk_places = [place.lower() for place in uk_places]
 
 # Places that are to be filtered out from geographical location
 no_places = pd.read_excel('/home/pi/Sync/twitter/Location_exceptions.xlsx').Place.to_list()
 
+# Keywords that will be used to search Twitter
+keywords = ['depression', 'depressed', 'depressive', 'depressing']
+
 # Current date to label the file name
 current_date = time.strftime('%Y%m%d')
 filename = current_date + '.csv'
-
-# Keywords that will be used to search Twitter
-keywords = ['depression', 'depressed', 'depressive', 'depressing']
 
 # Function to append csv
 def append_list_as_row(file_name, list_of_elem):
@@ -50,18 +45,15 @@ class MyStreamListener(StreamListener):
     def __init__(self, time_limit=600):
         self.start_time = time.time()
         self.limit = time_limit
-
         self.api = api
-
         super(MyStreamListener, self).__init__()
 
     def on_status(self, status):
 
         # Checking that the script only runs cetain amount of time
         if (time.time() - self.start_time) < self.limit:
-
             user_data = []
-
+            
             # Opens time tweets extracted and tweet identifier to log.txt
             log_file = open("/home/pi/Sync/twitter/Mining_Log.txt", 'a')
             
@@ -72,7 +64,6 @@ class MyStreamListener(StreamListener):
                 if status.user.location is not None: 
                     if (sum([1 for loc in uk_places if loc in status.user.location.lower()]) > 0) and (sum([1 for place in no_places if place in status.user.location]) == 0):
                         self.save_tweet = 1
-
             except:
                 pass
 
