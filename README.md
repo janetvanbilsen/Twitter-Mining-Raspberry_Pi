@@ -42,13 +42,9 @@ To change the script running time, edit _time_limit_ in the MyStreamListener cla
 ### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
 
-`Places_UK.xlsx`<br />
+`Places_UK.xlsx`: includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
 
-Includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
-
-`Location_exceptions.xlsx`<br /> 
-
-Includes a column of location names that you _do not_ want to be included in the user's location string<br />
+`Location_exceptions.xlsx`: includes a column of location names that you _do not_ want to be included in the user's location string
 (e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham)
 
 ### Crontab ###
