@@ -39,9 +39,8 @@ To change the script running time, edit _time_limit_ in the MyStreamListener cla
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
 
 #### Twitter Keyword Search ####
-CATS was developed to study depression on Twitter. Hence, the default keywords. To change the terms used to search Twitter, edit the follow code in `collect_tweets_master.py`<br />
+CATS was developed to study depression on Twitter. Hence, the default keywords. To change the terms used to search Twitter, edit the following code in `collect_tweets_master.py`:<br />
 
-`# Keywords that will be used to search Twitter`<br />
 `keywords = ['depression', 'depressed', 'depressive', 'depressing']`
 
 ### Location Datasets ###
