@@ -24,7 +24,7 @@ To install this project, either:
 ## Instructions ##
 
 ### Raspberry Pi Setup ###
-CATS was developed using the Raspberry Pi 4 Model B (4GB RAM) in a case that included a cooling fan and heatsinks for the board. Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
+CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
 
 While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the tweets mining will be produced by CATS and saved as 'mining_log.txt.' This log includes tweet creation date&time, username of the tweeter, and date&time that this tweet was collected. Using the below code, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress via a virtual monitor on smartphone or laptop.<br />
 
