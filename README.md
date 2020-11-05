@@ -45,7 +45,7 @@ Included are two location datasets. These are Excel files that contain one colum
 `Places_UK.xlsx`: includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
 
 `Location_exceptions.xlsx`: includes a column of location names that you _do not_ want to be included in the user's location string
-(e.g., USA is included to prevent American cities that are also UK cities, such as Birmingham). _Names are case sensitive_
+(e.g., USA is included to prevent American cities that are also UK cities). _Names are case sensitive_.
 
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.<br />
