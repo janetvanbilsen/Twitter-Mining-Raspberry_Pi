@@ -7,7 +7,7 @@ CATS (Continuous rAspberry pi Tweets collection Server) can be used to turn a Ra
    * [Introduction](#introduction)
    * [Installation](#installation)
    * [Instructions](#instructions)
-      * [Tweepy Setup](#tweepy-setup)
+      * [Twitter Script Setup](#twiiter-script-setup)
       * [Location Datasets](#location-datasets)
       * [Crontab](#crontab)
       * [Raspberry Pi Setup](#raspberry-pi-setup)
@@ -23,16 +23,21 @@ To install this project, either:
 
 ## Instructions ##
 
-### Tweepy Setup ###
-#### Twitter API Keys ####
-Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developor keys
+### Twitter Scirpt Setup ###
+#### Developer API Keys ####
+Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developer keys
 * consumer_key
 * consumer_secret
 * access_token
 * secret_token_secret<br />
 
 #### Script Running Time ####
-The current setup has the script run for 600 seconds (10 mins). This is because the server was developed to run from 7am to midnight and instead of running the script for 17 hours straight, for stability reasons it would be better to run it every 10mins for 17 hours. Therefore, if there is any issues with timeout, the script will run again in less than 10 mins and reduce the amount of data lost. _See the [Crontab section](#crontab) for more details on how to automate the script_.
+The current setup has the script run for 600 seconds (10 mins). This is because the server was developed to run from 7am to midnight and instead of running the script for 17 hours straight, for stability reasons it would be better to run it every 10mins for 17 hours. Therefore, if there is any issues with timeout, the script will run again in less than 10 mins and reduce the amount of data lost. _See the [Crontab section](#crontab) for more details on how to automate the script_.<br />
+
+To change the script running time, edit _time_limit_ in the MyStreamListener class:
+`class MyStreamListener(StreamListener):
+    def __init__(self, time_limit=600):`
+
 
 ### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
