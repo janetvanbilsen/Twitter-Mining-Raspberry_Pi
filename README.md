@@ -13,7 +13,7 @@ This project is fully open-source under the MIT License.
    * [Instructions](#instructions)
       * [Twitter Script Setup](#twitter-script-setup)
       * [Location Datasets](#location-datasets)
-      * [Crontab](#crontab)
+      * [Automating Script](#automating-script)
       * [Raspberry Pi Setup](#raspberry-pi-setup)
 <!--te-->
 
@@ -61,7 +61,7 @@ Included are two location datasets. These are Excel files that contain one colum
 
 Note: before running the script, you must enter your own file pathname for these two files.
 
-### Crontab ###
+### Automating Script ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal. The default in the script is every 10 mins from 7 am to midnight.<br />
 
 Enter into the cron editor with the following BASH command:<br />
