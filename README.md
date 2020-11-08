@@ -52,12 +52,14 @@ To change the script running time, edit _time_limit_ in the MyStreamListener cla
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
 
 ### Location Datasets ###
-Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
+Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. Provided are location names for anyone wishing to study tweets exclusively from the UK.<br />
 
 `incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_. <br /> 
 
 `excl_places.xlsx`: provided is a default dataset of American state names. This is for places that you _do not_ want to be included in the user's location string
-(i.e., MD is included to prevent Salisbury, Maryland to be included in a UK dataset). _Names are case sensitive_.
+(i.e., MD is included to prevent Salisbury, Maryland to be included in a UK dataset). _Names are case sensitive_.<br />
+
+Note: before running the script, you must enter your own file pathname for these two files.
 
 ### Crontab ###
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal. The default in the script is every 10 mins from 7 am to midnight.<br />
