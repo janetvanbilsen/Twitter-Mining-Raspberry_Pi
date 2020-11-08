@@ -14,7 +14,6 @@ This project is fully open-source under the MIT License.
       * [Twitter Script Setup](#twitter-script-setup)
       * [Location Datasets](#location-datasets)
       * [Automating Script](#automating-script)
-      * [Raspberry Pi Setup](#raspberry-pi-setup)
 <!--te-->
 
 ## Introduction ##
