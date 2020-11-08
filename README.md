@@ -36,11 +36,11 @@ Make sure that you replace the Twitter API key placeholders in `collect_tweets_m
 * secret_token_secret<br />
 
 #### Twitter Search ####
-CATS was developed to study depression on Twitter. Hence, the default keywords. To change the terms used to search Twitter, edit the following code in `collect_tweets_master.py`:<br />
+Initialise the keywords that you would like to search using Streaming API. To do so, change the default terms in `collect_tweets_master.py`:<br />
 
-`keywords = ['depression', 'depressed', 'depressive', 'depressing']`<br />
+`keywords = ['keyword1', 'keyword2', 'keyword3']`<br />
 
-The tweet language is set to English. This can be changed by editing the following code:<br />
+The default tweet language is set to English. This can be changed by editing the following code:<br />
 
 `myStream.filter(track=keywords, languages=["en"])`<br />
 
@@ -54,13 +54,13 @@ To change the script running time, edit _time_limit_ in the MyStreamListener cla
 ### Location Datasets ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location.<br />
 
-`Places_UK.xlsx`: includes a column with the locations that you want to collect tweets from. _Names are not case sensitive_.<br />
+`incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_. <br /> 
 
-`Location_exceptions.xlsx`: includes a column of location names that you _do not_ want to be included in the user's location string
-(e.g., USA is included to prevent American cities that are also UK cities). _Names are case sensitive_.
+`excl_places.xlsx`: provided is a default dataset of American state names. This is for places that you _do not_ want to be included in the user's location string
+(i.e., MD is included to prevent Salisbury, Maryland to be included in a UK dataset). _Names are case sensitive_.
 
 ### Crontab ###
-Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal.<br />
+Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal. The default in the script is every 10 mins from 7 am to midnight.<br />
 
 Enter into the cron editor with the following BASH command:<br />
 `pi@raspberrypi:~ $ crontab -e`<br />
@@ -68,7 +68,7 @@ Enter into the cron editor with the following BASH command:<br />
 Format the cron job with the following cron expression:<br />
 `*/10 07-23 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 collect_tweets_master.py`  
 
-* `*/10 07-23 * * *`: executing every 10 mins from 7 am to midnight
+* `*/10 07-23 * * *`: cron expression signifying script automation rules
 * `cd /home/pi/Sync/twitter`: changing directory to the folder that contains the python file
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
 * `collect_tweets_master.py`: Python file that is to be run
@@ -76,7 +76,7 @@ Format the cron job with the following cron expression:<br />
 ### Raspberry Pi Setup ###
 CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
 
-While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `Mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
+While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
