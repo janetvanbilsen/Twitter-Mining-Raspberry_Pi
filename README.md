@@ -62,6 +62,7 @@ Included are two location datasets. These are Excel files that contain one colum
 Note: before running the script, you must enter your own file pathname for these two files.
 
 ### Automating Script ###
+#### Using Crontab ####
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal. The default in the script is every 10 mins from 7 am to midnight.<br />
 
 Enter into the cron editor with the following BASH command:<br />
@@ -75,7 +76,7 @@ Format the cron job with the following cron expression:<br />
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
 * `collect_tweets_master.py`: Python file that is to be run
 
-### Raspberry Pi Setup ###
+#### Raspberry Pi Setup ####
 CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
 
 While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
