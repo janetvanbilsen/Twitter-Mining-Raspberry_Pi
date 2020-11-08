@@ -80,7 +80,7 @@ CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has 
 
 While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
 
-`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/Mining_Log.txt`
+`pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
 * _-n1_ only prints the last row
 * _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
