@@ -51,44 +51,39 @@ class MyStreamListener(StreamListener):
     def on_status(self, status):
 
         # Checking that the script only runs cetain amount of time
-        if (time.time() - self.start_time) < self.limit:
-            user_data = []
-            
-            # Opens time tweets extracted and tweet identifier to log.txt
-            log_file = open('pathname for mining_log.txt', 'a')
-            
-            self.save_tweet = 0
-            
-            # Checks if user has a location, then if location matches reqs
+        if self.save_tweet == 1:
             try:
-                if status.user.location is not None: 
-                    if (sum([1 for loc in incl_places if loc in status.user.location.lower()]) > 0) and (sum([1 for place in excl_places if place in status.user.location]) == 0):
-                        self.save_tweet = 1
-            except:
-                pass
-
-            # Checks that tweet is not RT or empty, then saves (full) tweet & info
-            if self.save_tweet == 1:
-                try:
-                    if not hasattr(status, 'retweeted_status'):
-                        try:
-                            if any(status.extended_tweet['full_text'].find(keyword) > -1 for keyword in keywords):
-                                twt = user_data.append(status.extended_tweet['full_text'])
-                            else AttributeError:
-                                twt = user_data.append(status.text)
-                                
+                if not hasattr(status, 'retweeted_status'):
+                    try:
+                        if any(status.extended_tweet["full_text"].find(keyword) > -1 for keyword in keywords):
                             twt_creat = status.created_at
                             user_data.append(twt_creat)
 
                             sn = status.user.screen_name
                             user_data.append(sn)
-                                
-                            user_data.append(status.user.location)
-                            user_data.append(twt)
                             
-                            log_file.write(f'{datetime.datetime.now()}, {twt_creat}\n')
+                            user_data.append(status.user.location)
+                            
+                            user_data.append(status.extended_tweet["full_text"])
+                        
+                            log_file.write(f"{datetime.datetime.now()}, {twt_creat}\n")
                             log_file.close()
 
+                    except AttributeError:
+                        if any(status.text.find(keyword) > -1 for keyword in keywords):
+                            twt_creat = status.created_at
+                            user_data.append(twt_creat)
+
+                            sn = status.user.screen_name
+                            user_data.append(sn)
+                            
+                            user_data.append(status.user.location)
+                            
+                            user_data.append(status.text)
+                            
+                            log_file.write(f"{datetime.datetime.now()}, {twt_creat}\n")
+                            log_file.close()
+                            
                         append_list_as_row('dataset.csv', user_data)
 
                 except:
