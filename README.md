@@ -56,7 +56,7 @@ Included are two location datasets. These are Excel files that contain one colum
 `incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_. <br /> 
 
 `excl_places.xlsx`: provided is a default dataset of American state names. This is for places that you _do not_ want to be included in the user's location string
-(i.e., MD is included to prevent Salisbury, Maryland to be included in a UK dataset). _Names are case sensitive_.<br />
+(i.e., MD is included to prevent Salisbury, Maryland from being included in a UK dataset). _Names are case sensitive_.<br />
 
 Note: before running the script, you must enter your own file pathname for these two files.
 
