@@ -21,7 +21,7 @@ This project is fully open-source under the <a href="https://mit-license.org/">M
 ## Installation ##
 To install this project, either:
 * Clone this Github repository 
-* Download the master branch zip file.
+* Download the master branch zip file
 
 
 ## Instructions ##
