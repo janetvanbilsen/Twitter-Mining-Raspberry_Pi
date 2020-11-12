@@ -13,7 +13,7 @@ This project is fully open-source under the <a href="https://mit-license.org/">M
    * [Instructions](#instructions)
       * [Twitter Script Setup](#twitter-script-setup)
       * [Automating Script](#automating-script)
-      * [Accessing Server Remotely](#accessing-server-remotely)
+      * [Monitoring Progress](#monitoring-progress)
 <!--te-->
 
 ## Introduction ##
@@ -86,7 +86,7 @@ Format the cron job with the following cron expression:<br />
 
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.<br />
 
-### Acessing Server Remotely ###
+### Monitoring Progress ###
 
 #### Viewing Running Log ####
 A running log of the process of the mining is be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
