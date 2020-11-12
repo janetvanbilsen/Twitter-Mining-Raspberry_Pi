@@ -89,7 +89,7 @@ It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating c
 ### Monitoring Progress ###
 
 #### Viewing Running Log ####
-A running log of the process of the mining is be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
+A running log of the process of the mining is be produced by CATS and saved as `mining_log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
 
 Example log:<br />
 `2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`<br />
