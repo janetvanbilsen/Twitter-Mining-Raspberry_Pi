@@ -28,12 +28,11 @@ To install this project, either:
 
 ### Twitter Scirpt Setup ###
 #### Developer API Keys ####
-Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developer keys<br /><br />
-
-`consumer_key = '*************************'`<br />
-`consumer_secret = '*************************************************'`<br />
-`access_token = '*******************-******************************'`<br />
-`secret_token_secret = '*********************************************'`<br />
+Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developer keys<br />
+* `consumer_key = '*************************'`
+* `consumer_secret = '*************************************************'`
+* `access_token = '*******************-******************************'`
+* `secret_token_secret = '*********************************************'`<br />
 
 #### Twitter Search ####
 Initialise the keywords that you would like to search using Streaming API. To do so, change the default terms in `collect_tweets_master.py`:<br />
