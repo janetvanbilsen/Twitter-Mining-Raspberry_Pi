@@ -88,11 +88,8 @@ It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating c
 
 ### Acessing Server Remotely ###
 
-#### Setting up Mining Log ####
-CATS was developed with the <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?resellerType=home
-">Raspberry Pi 4 Model B (4GB RAM)</a>.<br /> 
-
-While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
+#### Viewing Running Log ####
+A running log of the process of the mining is be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
 
 Example log:<br />
 `2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`<br />
@@ -105,8 +102,7 @@ Example log:<br />
 `2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`<br />
 <br />
 
-#### Viewing Running Log Using VNC Viewer ####
-Using the code below, you can keep the active mining log open in the terminal window on the Pi. With this, you can use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
+You can use SSH to run the mining log on a remote computer to view its progress. Once logged into the Pi's terminal using SSH, run the below code to have the mining log run on the terminal.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
