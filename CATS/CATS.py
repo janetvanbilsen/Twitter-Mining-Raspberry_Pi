@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 
 import tweepy
+from tweepy.streaming import StreamListener
 import time
 import datetime
-from tweepy.streaming import StreamListener
 import pandas as pd
 from csv import writer
 
