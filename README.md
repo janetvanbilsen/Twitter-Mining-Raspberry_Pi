@@ -28,14 +28,14 @@ To install this project, either:
 
 ### Twitter Scirpt Setup ###
 #### Developer API Keys ####
-Make sure that you replace the Twitter API key placeholders in `collect_tweets_master.py` with your own valid Twitter developer keys<br />
+Make sure that you replace the Twitter API key placeholders in `CATS.py` with your own valid Twitter developer keys<br />
 * `consumer_key = '*************************'`
 * `consumer_secret = '*************************************************'`
 * `access_token = '*******************-******************************'`
 * `secret_token_secret = '*********************************************'`<br />
 
 #### Twitter Search ####
-Initialise the keywords that you would like to search using Streaming API in the `collect_tweets_master.py` file. To do so, change the default terms :<br />
+Initialise the keywords that you would like to search using Streaming API in the `CATS.py` file. To do so, change the default terms :<br />
 
 `keywords = ['keyword1', 'keyword2', 'keyword3']`<br />
 
@@ -64,7 +64,7 @@ This can be changed by editing the `MyStreamListener` class.<br />
 ### Automating Script ###
 
 #### Script Running Time ####
-The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
+The current setup has `CATS` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
 
 To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
 `class MyStreamListener(StreamListener):`<br />
@@ -77,12 +77,12 @@ Enter into the cron editor with the following BASH command:<br />
 `pi@raspberrypi:~ $ crontab -e`<br />
   
 Format the cron job with the following cron expression:<br />
-`*/10 07-23 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 collect_tweets_master.py`  
+`*/10 07-23 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 CATS.py`  
 
 * `*/10 07-23 * * *`: cron expression signifying script automation rules
 * `cd /home/pi/Sync/twitter`: changing directory to the folder that contains the python file
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
-* `collect_tweets_master.py`: Python file that is to be run<br />
+* `CATS.py`: Python file that is to be run<br />
 
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.<br />
 
