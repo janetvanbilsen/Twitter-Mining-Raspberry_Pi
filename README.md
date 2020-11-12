@@ -64,7 +64,7 @@ This can be changed by editing the `MyStreamListener` class.<br />
 ### Automating Script ###
 
 #### Script Running Time ####
-The current setup has `CATS` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
+The current setup has `CATS.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
 
 To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
 `class MyStreamListener(StreamListener):`<br />
