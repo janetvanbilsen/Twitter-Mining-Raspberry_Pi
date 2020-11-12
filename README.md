@@ -45,12 +45,20 @@ The default tweet language is set to English. This can be changed by editing the
 #### Specifying Tweet Location ####
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. Provided are location names for anyone wishing to study tweets exclusively from the UK.<br />
 
-`incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_. <br /> 
+`incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_.<br /> 
 
 `excl_places.xlsx`: provided is a default dataset of American state names. This is for places that you _do not_ want to be included in the user's location string
 (i.e., MD is included to prevent Salisbury, Maryland from being included in a UK dataset). _Names are case sensitive_.<br />
 
 Note: before running the script, you must enter your own file pathname for these two files.
+
+#### Specifying Mining Details ####
+The current script saves the following Twitter attributes:
+* Entire tweet content: `status.extended_tweet["full_text"]`
+* Screen name of user: `status.user.screen_name`
+* User location (from bio): `status.user.location`<br /> 
+
+This can be changed by editing the `MyStreamListener` class.
 
 
 ### Automating Script ###
