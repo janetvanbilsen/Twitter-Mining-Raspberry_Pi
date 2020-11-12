@@ -31,7 +31,7 @@ Make sure that you replace the Twitter API key placeholders in `collect_tweets_m
 * `consumer_key = '*************************'`
 * `consumer_secret = '*************************************************'`
 * `access_token = '*******************-******************************'`
-* `secret_token_secret = '*********************************************'`<br />
+* `secret_token_secret = '*********************************************'`<br /><br />
 
 #### Twitter Search ####
 Initialise the keywords that you would like to search using Streaming API in the `collect_tweets_master.py` file. To do so, change the default terms :<br />
@@ -40,7 +40,7 @@ Initialise the keywords that you would like to search using Streaming API in the
 
 The default tweet language is set to English. This can be changed by editing the following code:<br />
 
-`myStream.filter(track=keywords, languages=['en'])`<br />
+`myStream.filter(track=keywords, languages=['en'])`<br /><br />
 
 #### Specifying Tweet Location ####
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. Provided are location names for anyone wishing to study tweets exclusively from the UK.<br />
