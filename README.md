@@ -1,7 +1,7 @@
 # CATS - Raspbery Pi Twitter Mining Server
 Since Streaming API, the most widely used tweets collection tool, returns at most only 1% of the available tweets on Twitter, projects trying to capture discourse on Twitter for a continuous period of time are at a disadvantage with a limited sample. It is therefore crucial to collect as many tweets as possible while still  keeping in line with Twitter's rate limit. However, sometimes research groups or individuals are not able to access a remote server to run Streaming API throughout the day. Keeping a laptop on 24/7 is not really a great option. <br />
 
-It is for this reason that **CATS (Continuous rAspberry pi Tweets collection Server)** was developed. CATS is a program that can be installed on a Raspberry Pi to turn it into a cost-effective Twitter mining server.<br />
+It is for this reason that **CATS (Continuous rAspberry pi Tweets collection Server)** was developed. CATS is a program that can be installed on a Raspberry Pi to turn it into a cost-effective Twitter mining server. The current project is developed to work with UNIX-like operating systems.<br />
 
 This project is fully open-source under the MIT License.
 
@@ -35,7 +35,7 @@ Make sure that you replace the Twitter API key placeholders in `collect_tweets_m
 * `secret_token_secret = '*********************************************'`<br />
 
 #### Twitter Search ####
-Initialise the keywords that you would like to search using Streaming API. To do so, change the default terms in `collect_tweets_master.py`:<br />
+Initialise the keywords that you would like to search using Streaming API in the `collect_tweets_master.py` file. To do so, change the default terms :<br />
 
 `keywords = ['keyword1', 'keyword2', 'keyword3']`<br />
 
@@ -44,7 +44,7 @@ The default tweet language is set to English. This can be changed by editing the
 `myStream.filter(track=keywords, languages=['en'])`<br />
 
 #### Script Running Time ####
-The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight, instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
+The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
 
 To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
 `class MyStreamListener(StreamListener):`<br />
@@ -73,7 +73,9 @@ Format the cron job with the following cron expression:<br />
 * `*/10 07-23 * * *`: cron expression signifying script automation rules
 * `cd /home/pi/Sync/twitter`: changing directory to the folder that contains the python file
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
-* `collect_tweets_master.py`: Python file that is to be run
+* `collect_tweets_master.py`: Python file that is to be run<br />
+
+Use  <a href="https://crontab.guru/">crontab guru</a>  to assist with creating cron schedule expressions.
 
 #### Raspberry Pi Setup ####
 CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
