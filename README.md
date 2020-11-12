@@ -61,7 +61,7 @@ The current script saves the following Twitter attributes:
 * Screen name of user: `status.user.screen_name`
 * User location (from bio): `status.user.location`<br /> 
 
-This can be changed by editing the `MyStreamListener` class.
+This can be changed by editing the `MyStreamListener` class.<br /><br />
 
 
 ### Automating Script ###
