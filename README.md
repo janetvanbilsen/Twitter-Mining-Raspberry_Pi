@@ -99,15 +99,15 @@ CATS was developed with the <a href="https://www.raspberrypi.org/products/raspbe
 
 While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
 
-Example of log:
-`2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`
-`2020-11-12 13:16:15.402419, 2020-11-12 13:16:10`
-`2020-11-12 13:17:10.156553, 2020-11-12 13:17:04`
-`2020-11-12 13:17:20.880684, 2020-11-12 13:17:15`
-`2020-11-12 13:17:25.362443, 2020-11-12 13:17:19`
-`2020-11-12 13:17:50.145950, 2020-11-12 13:17:45`
-`2020-11-12 13:17:55.546557, 2020-11-12 13:17:50`
-`2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`
+Example of log:<br />
+`2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`<br />
+`2020-11-12 13:16:15.402419, 2020-11-12 13:16:10`<br />
+`2020-11-12 13:17:10.156553, 2020-11-12 13:17:04`<br />
+`2020-11-12 13:17:20.880684, 2020-11-12 13:17:15`<br />
+`2020-11-12 13:17:25.362443, 2020-11-12 13:17:19`<br />
+`2020-11-12 13:17:50.145950, 2020-11-12 13:17:45`<br />
+`2020-11-12 13:17:55.546557, 2020-11-12 13:17:50`<br />
+`2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`<br />
 <br /><br />
 
 #### Accessing Pi Remotely SSH ####
