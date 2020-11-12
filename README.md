@@ -42,7 +42,7 @@ The default tweet language is set to English. This can be changed by editing the
 
 `myStream.filter(track=keywords, languages=['en'])`<br />
 
-### Specifying Tweet Location ###
+#### Specifying Tweet Location ####
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. Provided are location names for anyone wishing to study tweets exclusively from the UK.<br />
 
 `incl_places.xlsx`: provided is a default dataset of 1000+ places within the UK to search for tweets from users that have any country, city or town within the UK in their Twitter bio location. _Names are not case sensitive_. <br /> 
