@@ -13,6 +13,7 @@ This project is fully open-source under the <a href="https://mit-license.org/">M
    * [Instructions](#instructions)
       * [Twitter Script Setup](#twitter-script-setup)
       * [Automating Script](#automating-script)
+      * [Accessing Server Remotely](#accessing-server-remotely)
 <!--te-->
 
 ## Introduction ##
@@ -90,12 +91,27 @@ Format the cron job with the following cron expression:<br />
 
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.<br /><br />
 
+### Acessing Server Remotely ###
 
 #### Setting up Mining Log ####
 CATS was developed with the <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?resellerType=home
 ">Raspberry Pi 4 Model B (4GB RAM)</a>.<br /> 
 
-While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
+While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
+
+Example of log:
+`2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`
+`2020-11-12 13:16:15.402419, 2020-11-12 13:16:10`
+`2020-11-12 13:17:10.156553, 2020-11-12 13:17:04`
+`2020-11-12 13:17:20.880684, 2020-11-12 13:17:15`
+`2020-11-12 13:17:25.362443, 2020-11-12 13:17:19`
+`2020-11-12 13:17:50.145950, 2020-11-12 13:17:45`
+`2020-11-12 13:17:55.546557, 2020-11-12 13:17:50`
+`2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`
+<br /><br />
+
+#### Accessing Pi Remotely SSH ####
+Using the code below, you can keep this running log open in the terminal window on the Pi and use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
