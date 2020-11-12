@@ -94,7 +94,7 @@ CATS was developed with the <a href="https://www.raspberrypi.org/products/raspbe
 
 While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format.<br />
 
-Example of log:<br />
+Example log:<br />
 `2020-11-12 13:15:44.214850, 2020-11-12 13:15:39`<br />
 `2020-11-12 13:16:15.402419, 2020-11-12 13:16:10`<br />
 `2020-11-12 13:17:10.156553, 2020-11-12 13:17:04`<br />
@@ -106,7 +106,7 @@ Example of log:<br />
 <br />
 
 #### Accessing Pi Remotely SSH ####
-Using the code below, you can keep this running log open in the terminal window on the Pi and use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
+Using the code below, you can keep the active mining log open in the terminal window on the Pi. With this, you can use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
