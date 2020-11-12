@@ -81,7 +81,7 @@ It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating c
 #### Setting up Mining Log ####
 CATS was developed with the Raspberry Pi 4 Model B (4GB RAM).<br />
 
-While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress via smartphone or laptop.<br />
+While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
