@@ -3,7 +3,7 @@ Since Streaming API, the most widely used tweets collection tool, returns at mos
 
 It is for this reason that **CATS (Continuous rAspberry pi Tweets collection Server)** was developed. CATS is a program that can be installed on a Raspberry Pi to turn it into a cost-effective Twitter mining server. The current project is developed to work with UNIX-like operating systems.<br />
 
-This project is fully open-source under the MIT License.
+This project is fully open-source under the <a href="https://mit-license.org/">MIT License</a>.
 
 ## Table of Contents ##
 <!--ts-->
