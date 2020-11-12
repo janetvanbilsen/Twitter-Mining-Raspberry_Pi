@@ -54,7 +54,7 @@ Note: before running the script, you must enter your own file pathname for these
 
 #### Specifying Mining Details ####
 The current script saves the following Twitter attributes:
-* Entire tweet content: `status.extended_tweet["full_text"]`
+* (Entire) tweet content: `status.extended_tweet["full_text"]` and `status.text`
 * Screen name of user: `status.user.screen_name`
 * User location (from bio): `status.user.location`<br /> 
 
