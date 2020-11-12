@@ -79,7 +79,8 @@ Format the cron job with the following cron expression:<br />
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.
 
 #### Setting up Mining Log ####
-CATS was developed with the Raspberry Pi 4 Model B (4GB RAM).<br />
+CATS was developed with the <a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/?resellerType=home
+">Raspberry Pi 4 Model B (4GB RAM)</a>.<br /> 
 
 While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
 
