@@ -75,12 +75,12 @@ Format the cron job with the following cron expression:<br />
 * `/usr/bin/python3.7`: folder that contains the Python version to be used
 * `collect_tweets_master.py`: Python file that is to be run<br />
 
-Use  <a href="https://crontab.guru/">crontab guru</a>  to assist with creating cron schedule expressions.
+It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.
 
 #### Raspberry Pi Setup ####
-CATS was developed with the Raspberry Pi 4 Model B (4GB RAM). Although CATS has not been tested using older models, the running of the script is not very CPU intensive. <br />
+CATS was developed with the Raspberry Pi 4 Model B (4GB RAM).<br />
 
-While it might be easier to initially setup CATS using a monitor, the server is normally run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress (via smartphone or laptop).<br />
+While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress via smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
