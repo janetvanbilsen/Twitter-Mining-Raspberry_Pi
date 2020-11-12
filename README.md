@@ -12,7 +12,6 @@ This project is fully open-source under the MIT License.
    * [Installation](#installation)
    * [Instructions](#instructions)
       * [Twitter Script Setup](#twitter-script-setup)
-      * [Specifying Tweet Location](#specifying-tweet-location)
       * [Automating Script](#automating-script)
 <!--te-->
 
@@ -43,13 +42,6 @@ The default tweet language is set to English. This can be changed by editing the
 
 `myStream.filter(track=keywords, languages=['en'])`<br />
 
-#### Script Running Time ####
-The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
-
-To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
-`class MyStreamListener(StreamListener):`<br />
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
-
 ### Specifying Tweet Location ###
 Included are two location datasets. These are Excel files that contain one column with locations that are applied to filter Twitter users' self-entered location. Provided are location names for anyone wishing to study tweets exclusively from the UK.<br />
 
@@ -60,8 +52,17 @@ Included are two location datasets. These are Excel files that contain one colum
 
 Note: before running the script, you must enter your own file pathname for these two files.
 
+
 ### Automating Script ###
-#### Using Crontab ####
+
+#### Script Running Time ####
+The current setup has `collect_tweets_master.py` run for 600 seconds (10 mins). Since this server was developed to run from 7am to midnight. Instead of running the script for 17 hours straight, it runs every 10 minutes for 17 hours. This is because if there are any issues, the script will run again in less than 10 minutes and reduce the amount of data lost. _See the [Crontab section](#crontab) for details on how to automate the script_.<br />
+
+To change the script running time, edit _time_limit_ in the MyStreamListener class:<br /><br />
+`class MyStreamListener(StreamListener):`<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`def __init__(self, time_limit=600):`
+
+#### Automating Running of Script ####
 Automate the running of the Twitter mining Python script by creating a cron job in the Raspberry Pi terminal. The default in the script is every 10 mins from 7 am to midnight.<br />
 
 Enter into the cron editor with the following BASH command:<br />
@@ -77,7 +78,7 @@ Format the cron job with the following cron expression:<br />
 
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.
 
-#### Raspberry Pi Setup ####
+#### Setting up Mining Log ####
 CATS was developed with the Raspberry Pi 4 Model B (4GB RAM).<br />
 
 While it might be easier to initially setup CATS using a monitor, the server was developed to run in headless mode. A running log of the process of the mining will be produced by CATS and saved as `mining_Log.txt`. This log includes tweet collection date&time and tweet creation date&time in csv format. Using the code below, you can keep this running log open in the terminal window on the Pi and use VNC Viewer to check on its progress via smartphone or laptop.<br />
