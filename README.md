@@ -105,7 +105,7 @@ Example log:<br />
 `2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`<br />
 <br />
 
-#### Accessing Pi Remotely SSH ####
+#### Viewing Running Log Using VNC Viewer ####
 Using the code below, you can keep the active mining log open in the terminal window on the Pi. With this, you can use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to check on its progress via smartphone or laptop.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
