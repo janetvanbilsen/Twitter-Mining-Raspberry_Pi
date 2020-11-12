@@ -25,23 +25,20 @@ incl_places = list(incl_places.place)
 incl_places = [place.lower() for place in uk_places]
 
 # Places that are to be filtered out from geographical location
-excl_places = pd.read_excel('pathname for excl_place.xlsx').Place.to_list()
+excl_places = pd.read_excel('pathname for excl_place.xlsx').place.to_list()
 
 # Keywords that will be used to search Twitter
 keywords = ['keyword1', 'keyword2', 'keyword3']
 
-# Current date to label the file name
-current_date = time.strftime('%Y%m%d')
-filename = current_date + '.csv'
-
-# Function to append csv
+# Function to create/append to dataset.csv
 def append_list_as_row(file_name, list_of_elem):
     with open(file_name, 'a+', newline='') as write_obj:
         csv_writer = writer(write_obj)
         csv_writer.writerow(list_of_elem)
 
+# Class to run Twitter Streaming API
 class MyStreamListener(StreamListener):
-    # Time limit of 10 mins (600 sec)
+    # Setting running time to max 10 mins (600 sec)
     def __init__(self, time_limit=600):
         self.start_time = time.time()
         self.limit = time_limit
@@ -49,12 +46,11 @@ class MyStreamListener(StreamListener):
         super(MyStreamListener, self).__init__()
 
     def on_status(self, status):
-
-        # Checking that the script only runs cetain amount of time
         if self.save_tweet == 1:
             try:
                 if not hasattr(status, 'retweeted_status'):
                     try:
+                        # Checking if tweet is not RT and keyword is in full tweet
                         if any(status.extended_tweet["full_text"].find(keyword) > -1 for keyword in keywords):
                             twt_creat = status.created_at
                             user_data.append(twt_creat)
@@ -69,7 +65,9 @@ class MyStreamListener(StreamListener):
                             log_file.write(f"{datetime.datetime.now()}, {twt_creat}\n")
                             log_file.close()
 
+                    # If no 'full tweet' attribute
                     except AttributeError:
+                        # Checking if keyword is in tweet
                         if any(status.text.find(keyword) > -1 for keyword in keywords):
                             twt_creat = status.created_at
                             user_data.append(twt_creat)
@@ -85,10 +83,8 @@ class MyStreamListener(StreamListener):
                             log_file.close()
                             
                         append_list_as_row('dataset.csv', user_data)
-
                 except:
                     pass
-
         else:
             return False
         
