@@ -63,9 +63,9 @@ for user in check_usernames:
 
         # Format: date checked, user, bot prediciton
         user_row = []
-        row.append(current_date)
-        row.append(user)
-        row.append(bot_pred)
+        user_row.append(current_date)
+        user_row.append(user)
+        user_row.append(bot_pred)
 
         append_as_row('bot_dataset.csv', user_row)
         append_as_row('usernames_checked_bot.csv', user)
