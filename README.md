@@ -3,7 +3,9 @@ Since Streaming API, the most widely used tweets collection tool, returns at mos
 
 It is for this reason that **CATS (Continuous rAspberry pi Tweets collection Server)** was developed. CATS is a program that can be installed on a Raspberry Pi to turn it into a cost-effective Twitter mining server. The current project is developed to work with UNIX-like operating systems.<br />
 
-This project is fully open-source under the <a href="https://mit-license.org/">MIT License</a>.
+This project is fully open-source under the <a href="https://mit-license.org/">MIT License</a>.<br />
+
+_CATS is still in development_
 
 ## Table of Contents ##
 <!--ts-->
@@ -21,7 +23,7 @@ This project is fully open-source under the <a href="https://mit-license.org/">M
 ## Installation ##
 To install this project, either:
 * Clone this Github repository 
-* Download the master branch zip file.
+* Download the master branch zip file
 
 
 ## Instructions ##
@@ -101,9 +103,11 @@ Example log:<br />
 `2020-11-12 13:17:55.546557, 2020-11-12 13:17:50`<br />
 `2020-11-12 13:18:09.518031, 2020-11-12 13:18:04`<br />
 
-You can use SSH to run the mining log on a computer (within the local network) to view its progress. Once logged into the Pi's terminal using SSH, run the below code to have the mining log run on the terminal.<br />
+You can use SSH to run the mining log on a computer to view its progress. Once logged into the Pi's terminal using SSH, run the below code to have the mining log run on the terminal.<br />
 
 `pi@raspberrypi:~ $ tail -n1 -F /home/pi/Sync/twitter/mining_log.txt`
 * _tail_ prints out any changes that occur to the file to the terminal 
 * _-n1_ only prints the last row
-* _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running
+* _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running<br />
+
+Alternatively, you can use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to view the terminal of the Pi and in that way monitor it's progress.
