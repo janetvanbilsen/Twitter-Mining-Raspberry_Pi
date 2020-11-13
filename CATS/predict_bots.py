@@ -5,23 +5,14 @@ import time
 import tweepy
 import botometer
 
-# Authenticating twitter
-consumer_key = 'uEgngDaydm9A5upXp44j6L2XM'
-consumer_secret = 'lCMlwFbT0d4FTElh33wuay1NCHNC5W9b49regjGH7RJ40BXTer' 
-access_token = '1306187660592123905-KHAcQ4Cyiw5IcB64Tys95Hb03sSYbe'
-secret_token_secret = 'c4qxlhQsjsf02l4CrEJfzPcdHIReHZYgHmqrkUnP1QXct'
-
-auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-auth.set_access_token(access_token, secret_token_secret)
-api = tweepy.API(auth, wait_on_rate_limit=True)
-
 # Authenticating Botometer API
-rapidapi_key = "efef2a84e3msh6e190d74b8cec09p1ee471jsnf9ef67417ba3"
+rapidapi_key = "**************************************************"
+               
 twitter_app_auth = {
-    'consumer_key': 'uEgngDaydm9A5upXp44j6L2XM',
-    'consumer_secret': 'lCMlwFbT0d4FTElh33wuay1NCHNC5W9b49regjGH7RJ40BXTer',
-    'access_token': '1306187660592123905-KHAcQ4Cyiw5IcB64Tys95Hb03sSYbe',
-    'access_token_secret': 'c4qxlhQsjsf02l4CrEJfzPcdHIReHZYgHmqrkUnP1QXct',
+    'consumer_key': '*************************',
+    'consumer_secret': '*************************************************',
+    'access_token': '*******************-******************************',
+    'access_token_secret': '*********************************************',
   }
 
 bom = botometer.Botometer(wait_on_ratelimit=True,
@@ -35,7 +26,7 @@ def append_as_row(file_name, new_row):
         csv_writer.writerow(new_row)
 
 # Opening dataset
-dataset = pd.read_csv('Dataset.csv', header=None)
+dataset = pd.read_csv('dataset.csv', header=None)
 
 # List of unique usernames from dataset
 usernames = dataset.iloc[:,1].to_list()
