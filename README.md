@@ -16,6 +16,7 @@ _CATS is still in development_
       * [Twitter Script Setup](#twitter-script-setup)
       * [Automating Script](#automating-script)
       * [Monitoring Progress](#monitoring-progress)
+      * [Cleaning Dataset](#cleaning-dataset)
 <!--te-->
 
 ## Introduction ##
@@ -111,3 +112,11 @@ You can use SSH to run the mining log on a computer to view its progress. Once l
 * _-F_ tracks the file even when the file does not exist yet, useful for when you want to track when the script starts running<br />
 
 Alternatively, you can use <a href="https://www.realvnc.com/en/connect/download/viewer/">VNC viewer</a> to view the terminal of the Pi and in that way monitor it's progress.
+
+### Cleaning Dataset ###
+
+The mining file creates empty rows when it does not collect tweets. To solve this, the CATS folder contains a file called `cleaning_empty_rows.py'` that removes these empty rows. Simply use crontab as below to automate the removal the empty rows.<br />
+
+`2 0 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 cleaning_empty_rows.py`
+* This runs every two minutes past midnight, since data collection runs from 7 am to midnight
+
