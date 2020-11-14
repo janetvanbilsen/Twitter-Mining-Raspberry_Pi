@@ -10,4 +10,4 @@ dataset = pd.read_csv('Dataset.csv')
 current_date = time.strftime('%Y%m%d')
 
 # Saving to backup folder
-dataset.to_csv('Dataset_backup_' + current_date + '.csv', index=False)
+dataset.to_csv('dataset_backup_' + current_date + '.csv', index=False)
