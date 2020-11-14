@@ -88,6 +88,14 @@ Format the cron job with the following cron expression:<br />
 
 It helps to use <a href="https://crontab.guru/">crontab guru</a> with creating cron schedule expressions.<br />
 
+#### Cleaning Dataset ####
+
+The mining file creates empty rows when it does not collect tweets. To solve this, the CATS folder contains a file called `cleaning_empty_rows.py'` that removes these empty rows. Simply use crontab as below to automate the removal the empty rows.<br />
+
+`2 0 * * * cd /home/pi/Sync/twitter && /usr/bin/python3.7 cleaning_empty_rows.py`
+* This runs every two minutes past midnight, since data collection runs from 7 am to midnight
+
+
 ### Monitoring Progress ###
 
 #### Viewing Running Log ####
